@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Item details · Lost & Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-pin"></span>
+      <div>
+        <h1>Lost &amp; Found</h1>
+        <span>Campus Board · report it, find it, return it</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">The Board</a>
+      <a class="nav-link primary" href="report.html">+ Report Item</a>
+      <a class="nav-link" href="my-items.html" id="nav-my-items" style="display:none">My Reports</a>
+      <span id="nav-auth-area"></span>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="max-width: 760px; padding-bottom: 60px;">
+  <p><a class="nav-link" href="index.html" style="transform:none;">← Back to the board</a></p>
+
+  <div id="detail-container">
+    <div class="empty-state"><strong>Loading…</strong></div>
+  </div>
+
+  <div id="thread-container"></div>
+</main>
+
+<footer class="site-footer">
+  Campus Lost &amp; Found Portal · built with Express, MongoDB &amp; vanilla JS
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/item.js"></script>
+</body>
+</html>

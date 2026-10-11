@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Report an Item · Lost & Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-pin"></span>
+      <div>
+        <h1>Lost &amp; Found</h1>
+        <span>Campus Board · report it, find it, return it</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">The Board</a>
+      <a class="nav-link primary" href="report.html">+ Report Item</a>
+      <a class="nav-link" href="my-items.html" id="nav-my-items" style="display:none">My Reports</a>
+      <span id="nav-auth-area"></span>
+    </nav>
+  </div>
+</header>
+
+<main class="container form-wrap" id="page-content">
+  <div class="index-card">
+    <h2>Report an item</h2>
+    <p class="subtitle" id="posting-as">Fill out this card and pin it to the board for others to see.</p>
+
+    <form id="report-form">
+      <div class="status-toggle">
+        <input type="radio" name="status" id="status-lost" value="lost" required />
+        <label class="lost-label" for="status-lost">I lost something</label>
+        <input type="radio" name="status" id="status-found" value="found" />
+        <label class="found-label" for="status-found">I found something</label>
+      </div>
+
+      <div class="form-grid">
+        <div class="full">
+          <label for="title-input">Item title</label>
+          <input id="title-input" name="title" type="text" placeholder="e.g. Navy blue Jansport backpack" required maxlength="120" />
+        </div>
+
+        <div class="full">
+          <label for="description-input">Description</label>
+          <textarea id="description-input" name="description" placeholder="Color, brand, distinguishing marks, contents…" required maxlength="1000"></textarea>
+        </div>
+
+        <div>
+          <label for="category-input">Category</label>
+          <select id="category-input" name="category" required>
+            <option value="" disabled selected>Choose one</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="location-input">Location</label>
+          <input id="location-input" name="location" type="text" placeholder="Library, 2nd floor" required maxlength="150" />
+        </div>
+
+        <div>
+          <label for="date-input">Date</label>
+          <input id="date-input" name="date" type="date" required />
+        </div>
+
+        <div class="full">
+          <label for="image-input">Photo URL (optional)</label>
+          <input id="image-input" name="imageUrl" type="url" placeholder="https://…" />
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button class="submit-btn" type="submit">Pin to board</button>
+        <span class="form-status" id="form-status"></span>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Campus Lost &amp; Found Portal · built with Express, MongoDB &amp; vanilla JS
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in · Lost & Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-pin"></span>
+      <div>
+        <h1>Lost &amp; Found</h1>
+        <span>Campus Board · report it, find it, return it</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">The Board</a>
+      <a class="nav-link" href="report.html">+ Report</a>
+      <a class="nav-link" href="my-items.html" id="nav-my-items" style="display:none">My Reports</a>
+      <span id="nav-auth-area"></span>
+    </nav>
+  </div>
+</header>
+
+<main class="container form-wrap">
+  <div class="index-card">
+    <div class="auth-tabs">
+      <div class="auth-tab active" data-tab="login">Log in</div>
+      <div class="auth-tab" data-tab="register">Create account</div>
+    </div>
+
+    <form class="auth-form active" id="login-form">
+      <div>
+        <label for="login-email">Email</label>
+        <input id="login-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label for="login-password">Password</label>
+        <input id="login-password" name="password" type="password" required autocomplete="current-password" />
+      </div>
+      <div class="submit-row">
+        <button class="submit-btn" type="submit">Log in</button>
+        <span class="form-status" id="login-status"></span>
+      </div>
+      <div class="demo-hint">
+        Just testing it out? Seed the database (<code>node seed.js</code> in
+        <code>backend/</code>) then log in as <code>priya@campus.edu</code> /
+        <code>password123</code>.
+      </div>
+    </form>
+
+    <form class="auth-form" id="register-form">
+      <div>
+        <label for="register-name">Full name</label>
+        <input id="register-name" name="name" type="text" required autocomplete="name" />
+      </div>
+      <div>
+        <label for="register-email">Email</label>
+        <input id="register-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label for="register-password">Password</label>
+        <input id="register-password" name="password" type="password" required minlength="6" autocomplete="new-password" />
+        <small>At least 6 characters.</small>
+      </div>
+      <div class="submit-row">
+        <button class="submit-btn" type="submit">Create account</button>
+        <span class="form-status" id="register-status"></span>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Campus Lost &amp; Found Portal · built with Express, MongoDB &amp; vanilla JS
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
